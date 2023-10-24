@@ -60,14 +60,15 @@ class _WeatherScreenState extends State<WeatherScreen> {
           state.when(
             loading: () {
               return const Center(
-                  child: Column(
-                children: [
-                  CircularProgressIndicator(
-                    strokeWidth: 2,
-                  ),
-                  Text(LoadingTitle)
-                ],
-              ));
+                child: Column(
+                  children: [
+                    CircularProgressIndicator(
+                      strokeWidth: 2,
+                    ),
+                    Text(LoadingTitle)
+                  ],
+                ),
+              );
             },
             loaded: (weatherLoaded) {
               // We change the double into int to get whole number
