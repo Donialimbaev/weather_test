@@ -1,4 +1,5 @@
 /* External Dependencies */
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -27,11 +28,11 @@ class _WeatherScreenState extends State<WeatherScreen> {
     final state = context.watch<WeatherBloc>().state;
 
     // We call this function to call event every 3 seconds
-    // Timer.periodic(Duration(seconds: 3), (Timer timer) {
-    //   context
-    //       .read<WeatherBloc>()
-    //       .add(const WeatherEventFetch(cityName: Saratov));
-    // });
+    Timer.periodic(Duration(seconds: 3), (Timer timer) {
+      context
+          .read<WeatherBloc>()
+          .add(const WeatherEventFetch(cityName: Saratov));
+    });
 
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
